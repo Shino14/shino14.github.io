@@ -1,57 +1,76 @@
-body {
+/* CSSのリセット（消さないでください） */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
   margin: 0;
-  font-family: "Hiragino Kaku Gothic ProN";
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+li {
+  list-style: none;
 }
 
 a {
   text-decoration: none;
 }
 
+/* ここからCSSを書いていきましょう */
+.header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9);
+  position: fixed;
+  z-index: 10;
+}
+.header-logo {
+  width: 124px;
+  margin-top: 20px;
+  float: left;
+}
+.header-right {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  float: right;
+    transition: all 1s;
+}
+.header-right a {
+  line-height: 65px;
+  padding: 0px 25px;
+  color: white;
+  display: block;
+}
+.header-right:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+.top-wrapper {
+  background-image: url(https://prog-8.com/images/html/advanced/top.png);
+  background-size: cover;
+  padding-top: 180px;
+  padding-bottom: 100px;
+  text-align: center;
+  color: white;
+}
 .container {
   width: 1170px;
   padding: 0 15px;
   margin: 0 auto;
 }
-
-.top-wrapper {
-  padding: 180px 0 100px 0;
-  background-image: url(https://prog-8.com/images/html/advanced/top.png);
-  background-size: cover;
-  color: white;
-  text-align: center;
-}
-
-.top-wrapper h1 {
-  opacity: 0.7;
+.container h1 {
   font-size: 45px;
+  font-weight: bold;
   letter-spacing: 5px;
-}
-
-.top-wrapper p {
   opacity: 0.7;
 }
-
-.btn-wrapper {
-  margin: 20px 0;
+.container p {
+  opacity: 0.7;
 }
-
-.btn-wrapper p {
-  margin: 10px 0;
-}
-
-.signup {
-  background-color: #239b76;
-}
-
-.facebook {
-  background-color: #3b5998;
-  margin-right: 10px;
-}
-
-.twitter {
-  background-color: #55acee;
-}
-
 .btn {
   padding: 8px 24px;
   color: white;
@@ -59,91 +78,110 @@ a {
   opacity: 0.8;
   border-radius: 4px;
 }
-
 .btn:hover {
   opacity: 1;
 }
-
-.fa {
-  margin-right: 5px;
+.signup {
+  background-color: #239b76;
+  margin-top: 30px;
+}
+.or {
+  padding: 15px 0px;
+}
+.facebook {
+  background-color: #3b5998;
+  margin-right: 10px;
+}
+.twitter {
+  background-color: #55acee;
 }
 
-header {
-  height: 65px;
-  width: 100%;
-  background-color: rgba(34, 49, 52, 0.9);
-}
 
-.logo {
-  width: 124px;
-  margin-top: 20px;
-}
-
-.header-left {
-  float: left;
-}
-
-.header-right {
-  float: right;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.5s;
-}
-
-.header-right:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.header-right a {
-  line-height: 65px;
-  padding: 0 25px;
-  color: white;
-  display: block;
-}
 
 .lesson-wrapper {
-  height: 500px;
-  padding-bottom: 80px;
+  height: 580px;
   background-color: #f7f7f7;
-  /* text-alignをcenterに指定してください */
-  text-align: center;
+    text-align: center;
 }
+.lessons {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
 
+}
 .heading {
-  padding-top: 60px;
-  padding-bottom: 30px;
-  color: #5f5d60;
+  padding-top: 80px;
 }
-
 .heading h2 {
+  color: #3f3d60;
   font-weight: normal;
 }
-
 .lesson {
   float: left;
   width: 25%;
+  margin-top: 50px;
 }
-
-/* lesson-iconクラスのCSSを指定してください */
 .lesson-icon {
   position: relative;
 }
-
-
-/* lesson-iconの中の<p>のCSSを指定してください */
 .lesson-icon p {
   position: absolute;
   top: 90px;
   width: 100%;
   color: white;
 }
-
-
-/* txt-contentsクラスのCSSを指定してください */
-.txt-contents {
+.text-contents {
+  font-size: 13px;
+  color: #b3aeb5;
   width: 80%;
+  margin-top: 15px;
   display: inline-block;
-  margin-top: 20px;
+  text-align: center;
+}
+
+
+
+.message-wrapper {
+  text-align: center;
+}
+.message-wrapper h2, h3 {
+  color: #5f5d60;
+} 
+.message-wrapper span {
+  background-color: #5dca88;
+  opacity: 0.8;
+  padding: 15px 40px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  box-shadow: 0px 7px #1a7940;
+  cursor: pointer;
+}
+.message-wrapper span:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+
+
+.footer {
+  border-top: 1px solid #eee;
+  padding: 30px 0px;
+}
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+}
+.footer img {
+  width: 124px;
+    float: left;
+}
+.footer p {
   font-size: 12px;
   color: #b3aeb5;
 }
+
+
 
